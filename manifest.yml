@@ -1,0 +1,9 @@
+
+---
+applications:
+- name: HousePriceEstimator
+  memory: 2GB
+  disk_quota: 2GB
+  random-route: true
+  parameters:
+  buildpack: 'python_buildpack'
