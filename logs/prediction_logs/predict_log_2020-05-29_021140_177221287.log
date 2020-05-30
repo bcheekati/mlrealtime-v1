@@ -1,0 +1,37 @@
+2020-05-29 02:11:40,525 : INFO : Start of Prediction
+2020-05-29 02:11:40,525 : INFO : run_id:2020-05-29_021140_177221287
+2020-05-29 02:11:40,525 : INFO : Start of Preprocessing...
+2020-05-29 02:11:40,526 : INFO : Start of feature encoding...
+2020-05-29 02:11:40,576 : INFO : End of feature encoding...
+2020-05-29 02:11:40,577 : INFO : Start of Droping Columns...
+2020-05-29 02:11:40,578 : INFO : End of Droping Columns...
+2020-05-29 02:11:40,578 : INFO : Start of finding missing values...
+2020-05-29 02:11:40,580 : INFO : End of finding missing values...
+2020-05-29 02:11:40,613 : INFO : Start of building final predictset...
+2020-05-29 02:11:40,626 : INFO : End of building final predictset...
+2020-05-29 02:11:40,626 : INFO : End of Preprocessing...
+2020-05-29 02:11:40,626 : INFO : Start of Load Model
+2020-05-29 02:11:40,626 : INFO : Model File KMeans loaded
+2020-05-29 02:11:40,626 : INFO : End of Load Model
+2020-05-29 02:11:40,629 : INFO : clusters loop started
+2020-05-29 02:11:40,636 : INFO : Start of finding correct model
+2020-05-29 02:11:40,636 : INFO : End of finding correct model
+2020-05-29 02:11:40,636 : INFO : Start of Load Model
+2020-05-29 02:11:40,637 : INFO : Model File XGBoost2 loaded
+2020-05-29 02:11:40,637 : INFO : End of Load Model
+2020-05-29 02:11:40,639 : INFO : Shape of Data (1, 9)
+2020-05-29 02:11:40,642 : INFO : Shape of Data None
+2020-05-29 02:11:40,643 : ERROR : Unsuccessful End of Prediction
+Traceback (most recent call last):
+  File "C:\Users\Admin\PycharmProjects\MLRealTimeProject_v1\apps\prediction\predict_model.py", line 114, in single_predict_from_model
+    y_predicted = model.predict(cluster_data_new)
+  File "C:\Users\Admin\PycharmProjects\WaferFaultDetection\venv\lib\site-packages\xgboost\sklearn.py", line 880, in predict
+    missing=self.missing, nthread=self.n_jobs)
+  File "C:\Users\Admin\PycharmProjects\WaferFaultDetection\venv\lib\site-packages\xgboost\core.py", line 459, in __init__
+    data, feature_names, feature_types
+  File "C:\Users\Admin\PycharmProjects\WaferFaultDetection\venv\lib\site-packages\xgboost\core.py", line 362, in _convert_dataframes
+    meta_type)
+  File "C:\Users\Admin\PycharmProjects\WaferFaultDetection\venv\lib\site-packages\xgboost\core.py", line 262, in _maybe_pandas_data
+    raise ValueError(msg + ', '.join(bad_fields))
+ValueError: DataFrame.dtypes for data must be int, float or bool.
+                Did not expect the data types in fields satisfaction_level, last_evaluation, number_project, average_montly_hours, time_spend_company, Work_accident, promotion_last_5years
