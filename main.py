@@ -3,6 +3,7 @@ from flask import Flask, request, render_template
 from flask import Response
 import flask_monitoringdashboard as dashboard
 import pandas as pd
+import os
 from flask_cors import CORS, cross_origin
 from apps.training.train_model import TrainModel
 from apps.prediction.predict_model import PredictModel
@@ -177,10 +178,10 @@ def single_prediction_route_client():
     except Exception as e:
         return Response("Error Occurred! %s" % e)
 
-
+port = int(os.getenv("PORT"))
 if __name__ == "__main__":
     #app.run(debug=True)
     host = '0.0.0.0'
-    port = 5000
+    #port = 5000
     httpd = simple_server.make_server(host, port, app)
     httpd.serve_forever()
